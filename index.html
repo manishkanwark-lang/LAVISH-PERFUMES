@@ -1,4 +1,71 @@
- 
+ <!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f3ec">
+<title>LAVISH PERFUMES — Signature Fragrances</title>
+<style>
+:root{--ink:#111;--cream:#f7f3ec;--line:#ddd6cb;--muted:#6d675f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,sans-serif}
+a{text-decoration:none;color:inherit}button{font:inherit}.topbar{background:#111;color:#fff;text-align:center;padding:9px 12px;font-size:10px;letter-spacing:2.5px}
+header{position:sticky;top:0;z-index:50;background:rgba(247,243,236,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:17px 5.5%}
+.logo{font-family:Georgia,serif;font-size:29px;letter-spacing:4px}.tag{font-size:8px;letter-spacing:4px;margin-top:2px;text-align:center}nav{display:flex;gap:30px}nav a{font-size:11px;letter-spacing:1.5px}.nav-actions{display:flex;gap:16px;font-size:21px}
+.hero{min-height:600px;display:grid;grid-template-columns:1fr 1.15fr;align-items:center;gap:25px;padding:70px 7%;overflow:hidden;background:linear-gradient(120deg,#eee5d8,#faf7f1 55%,#e5dacb)}
+.hero-copy{max-width:540px}.eyebrow{font-size:10px;letter-spacing:5px;color:#635b51}.hero h1{font:400 clamp(54px,7vw,94px)/.9 Georgia,serif;letter-spacing:-2px;margin:18px 0}.hero h1 span{display:block;font-size:.34em;letter-spacing:8px;margin-top:18px}
+.hero p{font-size:14px;line-height:1.7;color:#4e4a45;max-width:420px}.cta{display:inline-block;margin-top:20px;background:#111;color:#fff;padding:15px 28px;font-size:10px;letter-spacing:2px;border-radius:2px}
+.hero-products{position:relative;height:470px;display:flex;align-items:center;justify-content:center;gap:10px}.hero-products img{width:30%;max-width:190px;filter:drop-shadow(0 22px 18px rgba(0,0,0,.18));border-radius:10px}.hero-products img:nth-child(1){transform:translateY(28px) rotate(-2deg)}.hero-products img:nth-child(2){transform:translateY(-25px);z-index:2}.hero-products img:nth-child(3){transform:translateY(28px) rotate(2deg)}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-bottom:1px solid var(--line)}.benefit{text-align:center;padding:25px 12px;border-right:1px solid var(--line)}.benefit:last-child{border:0}.icon{font-size:24px;margin-bottom:8px}.benefit b{display:block;font-family:Georgia,serif;font-size:14px}.benefit span{font-size:10px;color:var(--muted)}
+.collection{padding:75px 5.5%}.heading{text-align:center;margin-bottom:42px}.heading .eyebrow{color:#777}.heading h2{font:400 42px Georgia,serif;margin:10px 0}.heading p{font-size:12px;color:var(--muted)}
+.grid{max-width:1220px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 8px 30px rgba(35,25,15,.06)}.product-photo{height:390px;width:100%;object-fit:cover;display:block}.card-body{padding:24px}.card-number{font-size:9px;letter-spacing:3px;color:#8c7a63}.card h3{font:400 26px Georgia,serif;margin:9px 0 4px}.notes{font-size:10px;letter-spacing:1px;color:#777}.desc{font-size:12px;line-height:1.6;color:#625e58;min-height:58px}.sizes{display:flex;gap:8px;margin:15px 0}.size{flex:1;background:#fff;border:1px solid #cfc7bb;padding:10px 5px;font-size:9px;cursor:pointer}.size.active{background:#111;color:#fff;border-color:#111}.buyrow{display:flex;align-items:center;justify-content:space-between;gap:10px}.price{font-size:17px}.price small{display:block;font-size:9px;color:#777;margin-top:2px}.btn{background:#111;color:#fff;padding:12px 14px;font-size:9px;letter-spacing:1.5px;white-space:nowrap}
+.story{min-height:390px;display:grid;grid-template-columns:1fr 1fr;background:#111;color:#fff}.story-copy{display:flex;flex-direction:column;justify-content:center;padding:60px 10%}.story-copy .eyebrow{color:#c7b9a4}.story h2{font:400 43px Georgia,serif;margin:15px 0}.story p{color:#c9c4bd;line-height:1.7;font-size:13px;max-width:480px}.outline{display:inline-block;width:max-content;border:1px solid #cfc3b2;padding:13px 20px;font-size:9px;letter-spacing:1.8px;margin-top:15px}
+.contact-strip{padding:55px 5.5%;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;background:#fff}.contact-card{border:1px solid var(--line);padding:28px;text-align:center;border-radius:8px}.contact-card .big{font-size:27px}.contact-card h3{font:400 20px Georgia,serif;margin:10px 0 6px}.contact-card p{font-size:11px;color:#777}.dark-btn{display:inline-block;background:#111;color:#fff;padding:12px 20px;font-size:9px;letter-spacing:1.5px;margin-top:8px}
+footer{background:#111;color:#eee;padding:35px 6%;display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:1px}.footer-logo{font:26px Georgia,serif;letter-spacing:4px}.footer-note{color:#aaa}
+@media(max-width:850px){nav{display:none}.hero{grid-template-columns:1fr;padding:55px 6%;text-align:center}.hero-copy{margin:auto}.hero p{margin-left:auto;margin-right:auto}.hero-products{height:330px}.hero-products img{max-width:125px}.benefits{grid-template-columns:repeat(2,1fr)}.benefit:nth-child(2){border-right:0}.benefit:nth-child(-n+2){border-bottom:1px solid var(--line)}.grid{grid-template-columns:1fr;max-width:520px}.story{grid-template-columns:1fr}.story-copy{padding:50px 8%}.contact-strip{grid-template-columns:1fr}}
+@media(max-width:480px){header{padding:14px 5%}.logo{font-size:24px}.hero h1{font-size:56px}.hero-products{height:280px}.hero-products img{max-width:100px}.collection{padding:55px 4%}.heading h2{font-size:34px}.product-photo{height:350px}.story h2{font-size:36px}footer{flex-direction:column;gap:14px;text-align:center}}
+</style>
+</head>
+<body>
+<div class="topbar">SCENTS THAT STAY &nbsp; • &nbsp; PREPAID ORDERS ONLY</div>
+<header>
+<a href="#"><div class="logo">LAVISH</div><div class="tag">PERFUMES</div></a>
+<nav><a href="#collection">FRAGRANCES</a><a href="#story">OUR STORY</a><a href="#contact">CONTACT</a></nav>
+<div class="nav-actions"><a href="https://instagram.com/lavishperfumes">◎</a><a href="https://wa.me/918091597437">⌁</a></div>
+</header>
+<section class="hero">
+<div class="hero-copy"><div class="eyebrow">DISCOVER YOUR SCENT</div><h1>More Than<br>A Scent<span>A FEELING</span></h1><p>Elegant fragrances for everyday stories. Discover the signature Lavish collection and find the scent that feels like you.</p><a class="cta" href="#collection">SHOP NOW &nbsp; →</a></div>
+<div class="hero-products">
+<img src="https://raw.githubusercontent.com/manishkanwark-lang/LAVISH-PERFUMES/main/file_000000003b7482089024708438f2293e.png" alt="Lavish Oud Royal">
+<img src="https://raw.githubusercontent.com/manishkanwark-lang/LAVISH-PERFUMES/main/file_00000000b1dc820887952dc6c9182c52.png" alt="Lavish Vanilla Noir">
+<img src="https://raw.githubusercontent.com/manishkanwark-lang/LAVISH-PERFUMES/main/file_000000004a9c8208aaf4375caaf72882.png" alt="Lavish Fleur Blanche">
+</div>
+</section>
+<section class="benefits">
+<div class="benefit"><div class="icon">◇</div><b>Long Lasting</b><span>Scents that stay with you</span></div>
+<div class="benefit"><div class="icon">♢</div><b>Premium Quality</b><span>Crafted with care</span></div>
+<div class="benefit"><div class="icon">♡</div><b>Perfect For Gifting</b><span>Make moments special</span></div>
+<div class="benefit"><div class="icon">□</div><b>Prepaid Orders Only</b><span>Safe & hassle free</span></div>
+</section>
+<section id="collection" class="collection">
+<div class="heading"><div class="eyebrow">OUR COLLECTION</div><h2>Our Signature Fragrances</h2><p>Different moods. A more Lavish you.</p></div>
+<div class="grid">
+<article class="card"><img class="product-photo" src="https://raw.githubusercontent.com/manishkanwark-lang/LAVISH-PERFUMES/main/file_000000003b7482089024708438f2293e.png" alt="Lavish Oud Royal perfume"><div class="card-body"><div class="card-number">01 / SIGNATURE</div><h3>Oud Royal</h3><div class="notes">OUD • AMBER • MUSK</div><p class="desc">Deep, refined and confident — a signature made to leave an impression.</p><div class="sizes"><button class="size active" data-name="Oud Royal" data-price="1199" data-size="100 ML">100 ML • ₹1,199</button><button class="size" data-name="Oud Royal" data-price="599" data-size="50 ML">50 ML • ₹599</button></div><div class="buyrow"><div class="price">₹1,199<small>100 ML</small></div><a class="btn order" href="#">ORDER NOW →</a></div></div></article>
+<article class="card"><img class="product-photo" src="https://raw.githubusercontent.com/manishkanwark-lang/LAVISH-PERFUMES/main/file_00000000b1dc820887952dc6c9182c52.png" alt="Lavish Vanilla Noir perfume"><div class="card-body"><div class="card-number">02 / SIGNATURE</div><h3>Vanilla Noir</h3><div class="notes">VANILLA • TONKA • SANDALWOOD</div><p class="desc">Warm, smooth and sophisticated — an elegant scent for memorable moments.</p><div class="sizes"><button class="size active" data-name="Vanilla Noir" data-price="1199" data-size="100 ML">100 ML • ₹1,199</button><button class="size" data-name="Vanilla Noir" data-price="599" data-size="50 ML">50 ML • ₹599</button></div><div class="buyrow"><div class="price">₹1,199<small>100 ML</small></div><a class="btn order" href="#">ORDER NOW →</a></div></div></article>
+<article class="card"><img class="product-photo" src="https://raw.githubusercontent.com/manishkanwark-lang/LAVISH-PERFUMES/main/file_000000004a9c8208aaf4375caaf72882.png" alt="Lavish Fleur Blanche perfume"><div class="card-body"><div class="card-number">03 / SIGNATURE</div><h3>Fleur Blanche</h3><div class="notes">FRESH • FLORAL • RADIANT</div><p class="desc">Fresh, bright and effortless — a clean floral signature for every day.</p><div class="sizes"><button class="size active" data-name="Fleur Blanche" data-price="1199" data-size="100 ML">100 ML • ₹1,199</button><button class="size" data-name="Fleur Blanche" data-price="599" data-size="50 ML">50 ML • ₹599</button></div><div class="buyrow"><div class="price">₹1,199<small>100 ML</small></div><a class="btn order" href="#">ORDER NOW →</a></div></div></article>
+</div>
+</section>
+<section id="story" class="story"><div></div><div class="story-copy"><div class="eyebrow">A SCENT CLOSER TO YOU</div><h2>Scents That Stay.</h2><p>Lavish is about the feeling a fragrance leaves behind — refined presentation, memorable scents and simple, genuine moments.</p><a class="outline" href="#contact">EXPLORE OUR STORY →</a></div></section>
+<section id="contact" class="contact-strip">
+<div class="contact-card"><div class="big">◉</div><h3>Shop via WhatsApp</h3><p>Quick. Easy. Direct.</p><a class="dark-btn" href="https://wa.me/918091597437">ORDER NOW →</a></div>
+<div class="contact-card"><div class="big">◎</div><h3>Follow Our Journey</h3><p>@lavishperfumes</p><a class="dark-btn" href="https://instagram.com/lavishperfumes">FOLLOW US →</a></div>
+<div class="contact-card"><div class="big">▣</div><h3>Prepaid Orders Only</h3><p>Safe & hassle free delivery.</p><a class="dark-btn" href="#collection">VIEW FRAGRANCES →</a></div>
+</section>
+<footer><div><div class="footer-logo">LAVISH</div><div>PERFUMES</div></div><div class="footer-note">Scents that stay. © 2026 Lavish Perfumes.</div></footer>
+<script>
+document.querySelectorAll(".card").forEach(function(card){const buttons=card.querySelectorAll(".size"),price=card.querySelector(".price"),order=card.querySelector(".order");function update(btn){buttons.forEach(b=>b.classList.remove("active"));btn.classList.add("active");const name=btn.dataset.name,amount=btn.dataset.price,size=btn.dataset.size;price.innerHTML="₹"+Number(amount).toLocaleString("en-IN")+"<small>"+size+"</small>";order.href="https://wa.me/918091597437?text="+encodeURIComponent("Hello LAVISH, I want to order "+name+" - "+size+" for Rs "+amount)}buttons.forEach(btn=>btn.addEventListener("click",()=>update(btn)));update(buttons[0])});
+</script>
+</body>
+</html>
 <!doctype html>
 <html lang="en">
 <head>
