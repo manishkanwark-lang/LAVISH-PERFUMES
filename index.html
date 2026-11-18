@@ -1,213 +1,64 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LAVISH | Premium Fragrances</title>
-
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080706">
+<title>LAVISH | The Art of Fragrance</title>
+<meta name="description" content="Discover LAVISH luxury fragrances. Signature scents crafted for those who value uniqueness.">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#fff;color:#111}
-header{height:72px;background:#fff;border-bottom:1px solid #ddd;
-display:flex;align-items:center;justify-content:space-between;padding:0 6%;position:sticky;top:0;z-index:10}
-.logo{font-family:Georgia,serif;font-size:28px;letter-spacing:6px;font-weight:bold}
-nav a{margin-left:25px;text-decoration:none;color:#111;font-size:12px;letter-spacing:2px}
-
-.hero{min-height:580px;background:#080808;color:white;
-display:grid;grid-template-columns:1fr 1fr;align-items:center}
-.hero-text{padding:60px 10%}
-.small{color:#c8a35a;letter-spacing:4px;font-size:12px}
-h1{font-family:Georgia,serif;font-size:70px;line-height:1;margin:20px 0}
-.hero-text p{color:#bbb;line-height:1.8;max-width:450px}
-.btn{display:inline-block;background:#c8a35a;color:#111;
-padding:15px 28px;margin-top:25px;text-decoration:none;
-font-size:12px;font-weight:bold;letter-spacing:2px}
-.hero-image{height:580px;display:flex;align-items:center;justify-content:center;
-background:radial-gradient(circle,#444,#080808)}
-.hero-image img{width:75%;max-height:500px;object-fit:cover}
-
-.collection{text-align:center;padding:75px 6%}
-.collection h2{font-family:Georgia,serif;font-size:42px;margin:12px}
-.sub{color:#777;margin-bottom:45px}
-.products{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
-.product{border:1px solid #eee;background:#fff}
-.product img{width:100%;height:350px;object-fit:cover}
-.info{text-align:left;padding:22px}
-.info small{color:#999;letter-spacing:2px}
-.info h3{font-family:Georgia,serif;font-size:24px;margin:10px 0}
-.price{font-weight:bold;font-size:18px}
-.info .btn{margin-top:15px}
-
-.about{background:#f5f2ec;text-align:center;padding:75px 10%}
-.about h2{font-family:Georgia,serif;font-size:40px;margin:15px}
-.about p{max-width:650px;margin:auto;color:#555;line-height:1.9}
-
-footer{background:#080808;color:#fff;padding:55px 7%;
-display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
-footer h3{font-family:Georgia,serif;margin-bottom:20px}
-footer p,footer a{color:#aaa;line-height:2;text-decoration:none;display:block}
-
-.whatsapp{position:fixed;right:20px;bottom:20px;width:58px;height:58px;
-border-radius:50%;background:#20c968;color:white;display:flex;
-align-items:center;justify-content:center;font-size:25px;text-decoration:none}
-
-@media(max-width:700px){
-nav{display:none}
-.hero{grid-template-columns:1fr}
-.hero-image{height:430px}
-h1{font-size:52px}
-.products{grid-template-columns:1fr}
-footer{grid-template-columns:1fr}
-}
+:root{--bg:#080807;--panel:#11100e;--gold:#d9b779;--gold2:#f2d5a0;--muted:#b9b2a8;--line:#302a21}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#f7f3ec;font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}
+header{height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 5.2%;background:#050505;border-bottom:1px solid #29231c;position:sticky;top:0;z-index:20}
+.logo{font:36px Georgia,serif;letter-spacing:2px;color:#fff}nav{display:flex;gap:30px;align-items:center}nav a{font-size:13px;color:#eee}nav a:hover{color:var(--gold2)}.nav-cta{border:1px solid var(--gold);padding:10px 17px;color:var(--gold2)}
+.hero{min-height:460px;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:55px 9%;gap:30px;background:radial-gradient(ellipse at 75% 55%,#3a2412 0%,#17100a 35%,#070706 75%)}
+.eyebrow{font-size:12px;letter-spacing:5px;color:var(--gold2)}h1{font:italic clamp(48px,6vw,76px)/.92 Georgia,serif;margin:20px 0 22px}h1 span{font-style:normal}.hero p{font:17px/1.6 Georgia,serif;color:#ddd;max-width:390px}.gold-btn{display:inline-block;background:linear-gradient(110deg,#f2d5a0,#c39450);color:#17110a;padding:15px 27px;border-radius:5px;font-weight:bold;font-size:14px;margin-top:16px}
+.hero-art{min-height:330px;display:flex;align-items:center;justify-content:center;position:relative}.hero-art:before{content:"";position:absolute;width:350px;height:220px;background:#b8782c33;filter:blur(65px);border-radius:50%}
+.hero-box{position:absolute;width:220px;height:260px;background:linear-gradient(130deg,#292522,#070707 55%,#1d1915);border:1px solid #62503a;box-shadow:20px 24px 40px #0009;transform:translateX(-85px) rotate(-3deg);display:grid;place-items:center}.hero-box:after{content:"LAVISH";font:26px Georgia,serif;letter-spacing:2px;border:1px solid #8b795f;padding:10px 14px}
+.bottle{position:relative;z-index:2;width:142px;height:210px;margin:65px 0 0 80px;border:3px solid #b58b4e;border-radius:22px 22px 27px 27px;background:linear-gradient(90deg,#7b3d08aa,#e69b25dd 35%,#9a4d0c 75%,#f5bd58);box-shadow:inset 9px 0 12px #ffe0a555,0 20px 30px #000b}
+.bottle:before{content:"";position:absolute;top:-53px;left:38px;width:58px;height:52px;background:linear-gradient(90deg,#aaa,#fff,#777);border-radius:8px 8px 3px 3px;box-shadow:0 -8px 0 6px #a7a7a7}.bottle:after{content:"LAVISH";position:absolute;left:13px;right:13px;top:77px;padding:13px 3px;background:#f6eee0;color:#19130c;text-align:center;font:bold 14px Georgia,serif;letter-spacing:2px}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #29231c;border-bottom:1px solid #29231c;padding:17px 5%;background:#0d0c0a}.benefit{display:flex;justify-content:center;align-items:center;gap:13px;border-right:1px solid #373027}.benefit:last-child{border:0}.benefit i{font-style:normal;color:var(--gold2);font-size:27px}.benefit b{display:block;font:15px Georgia,serif}.benefit small{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+.box-promise{display:grid;grid-template-columns:.85fr 1.15fr;align-items:center;gap:34px;padding:34px 9%;background:linear-gradient(110deg,#100d09,#21160d 55%,#0b0907);border-top:1px solid #3a2c1b;border-bottom:1px solid #3a2c1b}
+.box-promise-art{min-height:190px;display:grid;place-items:center;background:radial-gradient(ellipse,#68431f55,transparent 68%)}
+.gift-box{width:190px;height:145px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;background:linear-gradient(135deg,#292521,#050505 65%,#211b14);border:1px solid #8d7048;box-shadow:12px 18px 28px #0009;transform:perspective(500px) rotateY(-8deg)}
+.gift-box:before{content:"";position:absolute;left:12px;right:12px;top:12px;bottom:12px;border:1px solid #8d7048}
+.gift-box span{font:27px Georgia,serif;letter-spacing:3px;z-index:1}.gift-box small{font-size:8px;letter-spacing:3px;color:#d8c4a2;z-index:1;margin-top:5px}
+.box-promise-copy h2{font:32px/1.15 Georgia,serif;margin:12px 0;color:#f7f0e5}.box-promise-copy p{color:#c9c0b4;line-height:1.7;max-width:520px}
+.included-tag{display:inline-block;border:1px solid var(--gold);color:var(--gold2);padding:9px 13px;font-size:10px;letter-spacing:2px;margin-top:8px}
+.section{padding:60px 4.2% 72px}.section-heading{text-align:center;margin-bottom:30px}.section-heading h2{font:38px Georgia,serif;margin:8px 0}.section-heading p{font-size:11px;letter-spacing:3px;color:#aaa}
+.products{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;max-width:1400px;margin:auto}.card{background:linear-gradient(145deg,#12110f,#080807);border:1px solid #29241e;border-radius:13px;overflow:hidden;transition:.25s;min-width:0}.card:hover{border-color:#947346;transform:translateY(-3px)}
+.product-visual{height:175px;background:radial-gradient(ellipse at 50% 80%,#4b2d13 0%,#15100b 44%,#090908 75%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.product-visual:before{content:"";position:absolute;width:100px;height:130px;left:calc(50% - 75px);top:25px;background:linear-gradient(130deg,#292521,#050505 70%);border:1px solid #65513b;box-shadow:8px 10px 15px #0009}
+.mini-bottle{position:relative;width:68px;height:105px;margin:28px 0 0 35px;border-radius:11px 11px 14px 14px;border:2px solid #b38a50;background:linear-gradient(90deg,#77400e,#e4a238 40%,#99500f);box-shadow:inset 5px 0 7px #ffe1a566,0 9px 14px #000b;z-index:1}.mini-bottle:before{content:"";position:absolute;top:-27px;left:17px;width:31px;height:26px;border-radius:5px 5px 2px 2px;background:linear-gradient(90deg,#888,#fff,#777)}.mini-bottle:after{content:"LAVISH";position:absolute;left:5px;right:5px;top:39px;background:#f4eddf;color:#17110a;text-align:center;font:bold 8px Georgia,serif;padding:7px 0;letter-spacing:1px}
+.card-body{padding:12px 12px 14px;text-align:center}.pack-note{font-size:10px;color:#e6c995;letter-spacing:.5px;margin:8px 0 2px}.card h3{font:20px Georgia,serif;margin:2px 0 5px}.notes{font-size:11px;color:#c6b9a6;min-height:16px}.price-line{display:flex;justify-content:center;gap:7px;margin:12px 0 10px;flex-wrap:wrap}.price-pill{font-size:11px;border:1px solid #4b4030;border-radius:5px;padding:6px 7px;color:#f4ead9;white-space:nowrap}.price-pill strong{color:var(--gold2)}.buy{display:block;background:linear-gradient(110deg,#f1d19a,#c18b45);color:#17110a;font-weight:bold;font-size:12px;padding:10px 6px;border-radius:5px;margin-top:7px}.buy:hover{filter:brightness(1.1)}
+.story{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;padding:65px 11%;background:radial-gradient(ellipse at 80%,#39210f,#100c08 55%,#080807)}.story h2{font:40px Georgia,serif;margin:10px 0}.story p{line-height:1.75;color:#d0c7bc;max-width:510px}.story-art{height:240px;display:grid;place-items:center;background:linear-gradient(135deg,#20170f,#070707);border:1px solid #5d472e;box-shadow:15px 18px 40px #0008}.story-art span{font:40px Georgia,serif;letter-spacing:5px;border:1px solid #a58b65;padding:18px 28px}
+footer{padding:38px 7%;display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap;background:#050505;border-top:1px solid #30271d;color:#c8c0b5}footer strong{font:27px Georgia,serif;color:#fff;letter-spacing:2px}footer a{color:var(--gold2)}.float-wa{position:fixed;right:20px;bottom:20px;z-index:30;background:#20bd65;color:#fff;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:26px;box-shadow:0 5px 20px #0009}
+@media(max-width:1000px){.products{grid-template-columns:repeat(3,1fr)}.hero{padding:45px 6%}.benefits{grid-template-columns:repeat(2,1fr);gap:15px}.benefit:nth-child(2){border:0}}
+@media(max-width:650px){.box-promise{grid-template-columns:1fr;gap:8px;padding:28px 8%;text-align:center}.box-promise-art{min-height:155px}.gift-box{width:165px;height:125px}.box-promise-copy h2{font-size:27px}.box-promise-copy p{font-size:14px}header{height:60px;padding:0 4%}.logo{font-size:27px}nav{gap:11px}nav a{font-size:10px}.nav-cta{display:none}.hero{grid-template-columns:1fr;padding:42px 7% 20px;text-align:center}.hero p{margin:auto}.hero-art{min-height:260px}.hero-box{width:160px;height:205px;transform:translateX(-55px)}.hero-box:after{font-size:20px}.bottle{transform:scale(.82);margin:50px 0 0 60px}.benefits{padding:14px 3%;gap:12px}.benefit{justify-content:flex-start;border:0}.benefit i{font-size:22px}.benefit b{font-size:12px}.benefit small{font-size:10px}.section{padding:43px 4%}.section-heading h2{font-size:31px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.product-visual{height:145px}.card-body{padding:10px 7px}.card h3{font-size:17px}.price-pill{font-size:10px;padding:5px}.buy{font-size:10px}.story{grid-template-columns:1fr;padding:42px 8%;gap:20px}.story-art{height:170px}.story h2{font-size:32px}footer{display:block;text-align:center}footer>*{margin:12px}}
 </style>
 </head>
-
 <body>
-
-<header>
-<div class="logo">LAVISH</div>
-<nav>
-<a href="#shop">SHOP</a>
-<a href="#about">ABOUT</a>
-<a href="#contact">CONTACT</a>
-</nav>
-</header>
-
-<section class="hero">
-<div class="hero-text">
-<div class="small">THE ART OF FRAGRANCE</div>
-<h1>Wear Your<br>Presence.</h1>
-<p>
-Discover premium fragrances designed to make your presence memorable.
-Elegant scents. Timeless character. LAVISH.
-</p>
-<a href="#shop" class="btn">SHOP COLLECTION</a>
-</div>
-<a href="https://lavishperfumes.in/prive-collection-2.html" class="btn">PRIVATE COLLECTION</a>
-
-
-
-
-
-
-<div class="hero-image">
-<div style="font-family:Georgia,serif;font-size:90px;letter-spacing:8px">
-LAVISH
-</div>
-</div>
-</section>
-
-
-  
-
-
-<section class="collection" id="shop">
-<div class="small">LAVISH COLLECTION</div>
-<h2>Signature Fragrances</h2>
-<p class="sub">Find the fragrance that becomes your signature.</p>
-
-<div class="products">
-
-<div class="product">
-<img src="Oud_Royal_Lavish.png" alt="LAVISH Oud Royal">
-<div class="info">
-<small>EAU DE PARFUM</small>
-<h3>Oud Royal</h3>
-<div class="price">₹1,199</div>
-<a href="https://wa.me/918091597437?text=Hi%20LAVISH%2C%20I%20want%20to%20order%20Oud%20Royal." class="btn">BUY NOW</a>
-</div>
-</div>
-
-<div class="product">
-<img src="Vanilla_Noire_Lavish.png" alt="LAVISH Vanilla Noire">
-<div class="info">
-<small>EAU DE PARFUM</small>
-<h3>Vanilla Noir</h3>
-<div class="price">₹1,199</div>
-<a href="https://wa.me/918091597437?text=Hi%20LAVISH%2C%20I%20want%20to%20order%20Vanilla%20Noir." class="btn">BUY NOW</a>
-</div>
-</div>
-<div class="product">
-<img src="Fleur_Blanche_Lavish.png" alt="LAVISH Fleur Blanche">
-<div class="info">
-<small>EAU DE PARFUM</small>
-<h3>Fleur Blanche</h3>
-<div class="price">₹1,199</div>
-<a href="https://wa.me/918091597437?text=Hi%20LAVISH%2C%20I%20want%20to%20order%20Flora%20Blanche." class="btn">BUY NOW</a>
-</div>
-<!-- LAVISH CARAMEL -->
-<div class="product">
-  <img src="LAVISH-Caramel.png" alt="LAVISH Caramel">
-  <div class="info">
-    <small>EAU DE PARFUM</small>
-    <h3>Caramel</h3>
-    <div class="price">50 ml — ₹700</div>
-    <div class="price">100 ml — ₹1,500</div>
-    <a class="btn" href="https://wa.me/918091597437?text=Hi%20LAVISH%2C%20I%20want%20Caramel.%20Please%20confirm%20size.">BUY NOW ON WHATSAPP</a>
+<header><a class="logo" href="#">LAVISH</a><nav><a href="#">Home</a><a href="#shop">Shop</a><a href="#shop">Collections</a><a href="#story">About</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></nav><a class="nav-cta" href="#shop">SHOP NOW</a></header>
+<main>
+<section class="hero"><div><div class="eyebrow">LUXURY FRAGRANCES</div><h1>The Art of<br><span>Fragrance</span></h1><p>Signature scents crafted for those who value uniqueness.</p><a class="gold-btn" href="#shop">Shop Collection&nbsp; →</a></div><div class="hero-art" aria-label="LAVISH luxury perfume bottle and box"><div class="hero-box"></div><div class="bottle"></div></div></section>
+<section class="benefits"><div class="benefit"><i>♧</i><div><b>Pan India Shipping</b><small>Safe &amp; Reliable</small></div></div><div class="benefit"><i>♢</i><div><b>Premium Quality</b><small>High Concentration</small></div></div><div class="benefit"><i>♧</i><div><b>Eco-Friendly</b><small>Thoughtful Packaging</small></div></div><div class="benefit"><i>♧</i><div><b>Luxury Experience</b><small>From our atelier to you</small></div></div></section>
+<section class="box-promise" aria-label="Premium packaging included">
+  <div class="box-promise-art"><div class="gift-box"><span>LAVISH</span><small>PERFUMES</small></div></div>
+  <div class="box-promise-copy">
+    <div class="eyebrow">A PREMIUM UNBOXING EXPERIENCE</div>
+    <h2>Your LAVISH fragrance arrives in this signature box.</h2>
+    <p>Every order is presented in our premium black LAVISH packaging. The box is included with your perfume.</p>
+    <span class="included-tag">PREMIUM LAVISH BOX INCLUDED</span>
   </div>
-</div>
-
-<!-- LAVISH TOBACCO -->
-<div class="product">
-  <img src="LAVISH-Tobacco.png" alt="LAVISH Tobacco">
-  <div class="info">
-    <small>EAU DE PARFUM</small>
-    <h3>Tobacco</h3>
-    <div class="price">50 ml — ₹700</div>
-    <div class="price">100 ml — ₹1,500</div>
-    <a class="btn" href="https://wa.me/918091597437?text=Hi%20LAVISH%2C%20I%20want%20Tobacco.%20Please%20confirm%20size.">BUY NOW ON WHATSAPP</a>
-  </div>
-</div>
-
-<!-- LAVISH COCODAK -->
-<div class="product">
-  <img src="LAVISH-Cocodak.png" alt="LAVISH Cocodak">
-  <div class="info">
-    <small>EAU DE PARFUM</small>
-    <h3>Cocodak</h3>
-    <div class="price">50 ml — ₹700</div>
-    <div class="price">100 ml — ₹1,500</div>
-    <a class="btn" href="https://wa.me/918091597437?text=Hi%20LAVISH%2C%20I%20want%20Cocodak.%20Please%20confirm%20size.">BUY NOW ON WHATSAPP</a>
-  </div>
-</div>
-
-</div>
-
-</div>
 </section>
-
-<section class="about" id="about">
-<div class="small">ABOUT LAVISH</div>
-<h2>Luxury, Kept Simple.</h2>
-<p>
-LAVISH is created for those who believe fragrance is more than a scent.
-It is a signature, a feeling and a lasting impression.
-</p>
-</section>
-
-<footer id="contact">
-<div>
-<h3>LAVISH</h3>
-<p>Premium fragrances. A signature presence.</p>
-</div>
-
-<div>
-<h3>QUICK LINKS</h3>
-<a href="#shop">Shop</a>
-<a href="#about">About Us</a>
-<a href="#">Shipping Policy</a>
-<a href="#">Return Policy</a>
-</div>
-
-<div>
-<h3>CONTACT</h3>
-<a href="#">WhatsApp</a>
-<a href="#">Instagram</a>
-<a href="mailto:hello@lavishperfumes.in">Email</a>
-</div>
-</footer>
-
-<a class="whatsapp" href="#">☎</a>
-
-</body>
-</html>
+<section class="section" id="shop"><div class="section-heading"><div class="eyebrow">EXPLORE OUR SIGNATURE FRAGRANCES</div><h2>Our Collection</h2><p>FIND YOUR SIGNATURE SCENT</p></div><div class="products" id="products"></div></section>
+<section class="story" id="story"><div><div class="eyebrow">OUR STORY</div><h2>The Lavish Story</h2><p>Born from a simple question by my son, “Papa, can’t we create our own perfume?” — Lavish is more than a brand; it’s a dream we built together. Every fragrance is created to make everyday moments feel extraordinary.</p><a class="gold-btn" href="#contact">Discover LAVISH →</a></div><div class="story-art"><span>LAVISH</span></div></section>
+<section class="section" id="reviews"><div class="section-heading"><div class="eyebrow">THE LAVISH EXPERIENCE</div><h2>Made to Be Remembered</h2><p>THANK YOU FOR MAKING LAVISH A PART OF YOUR STORY</p></div></section>
+</main>
+<footer id="contact"><div><strong>LAVISH</strong><p>Luxury fragrances. A signature presence.</p></div><div>ORDERS &amp; ENQUIRIES<br><a href="https://wa.me/918091597437" target="_blank" rel="noopener">WhatsApp: +91 80915 97437</a></div><div>© 2026 LAVISH PERFUMES</div></footer>
+<a class="float-wa" href="https://wa.me/918091597437?text=Hello%20LAVISH%2C%20I%20would%20like%20to%20know%20more%20about%20your%20fragrances." target="_blank" rel="noopener" aria-label="Chat with LAVISH on WhatsApp">✆</a>
+<script>
+const products=[["Oud Royal","Woody • Oriental • Leather"],["Vanilla Noir","Warm • Sweet • Seductive"],["Fleur Blanche","Floral • Elegant • Fresh"],["Marshmallow","Sweet • Creamy • Playful"],["Lucid","Fresh • Citrusy • Modern"],["Tobacco","Rich • Smoky • Sophisticated"],["Caramel","Sweet • Warm • Addictive"],["Cocodak","Coconut • Creamy • Tropical"],["Fire Night","Spicy • Intense • Nightwear"],["Elixir Vampire","Dark • Mysterious • Sensual"]];
+const root=document.getElementById("products");
+products.forEach(([name,notes])=>{const card=document.createElement("article");card.className="card";const msg=(size,price)=>"https://wa.me/918091597437?text="+encodeURIComponent("Hello LAVISH, I would like to order "+name+" - "+size+" for ₹"+price+". Please confirm my order.");card.innerHTML='<div class="product-visual" role="img" aria-label="'+name+' perfume bottle"><div class="mini-bottle"></div></div><div class="card-body"><h3>'+name+'</h3><div class="notes">'+notes+'</div><div class="pack-note">✦ PREMIUM LAVISH BOX INCLUDED</div><div class="price-line"><span class="price-pill">50 ml <strong>₹599</strong></span><span class="price-pill">100 ml <strong>₹1,200</strong></span></div><a class="buy" href="'+msg("50 ml",599)+'" target="_blank" rel="noopener">BUY NOW · 50 ML</a><a class="buy" href="'+msg("100 ml",1200)+'" target="_blank" rel="noopener">BUY NOW · 100 ML</a></div>';root.appendChild(card);});
+</script>
+</body></html>
