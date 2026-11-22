@@ -56,9 +56,105 @@ footer{padding:38px 7%;display:flex;justify-content:space-between;gap:25px;flex-
 </main>
 <footer id="contact"><div><strong>LAVISH</strong><p>Luxury fragrances. A signature presence.</p></div><div>ORDERS &amp; ENQUIRIES<br><a href="https://wa.me/918091597437" target="_blank" rel="noopener">WhatsApp: +91 80915 97437</a></div><div>© 2026 LAVISH PERFUMES</div></footer>
 <a class="float-wa" href="https://wa.me/918091597437?text=Hello%20LAVISH%2C%20I%20would%20like%20to%20know%20more%20about%20your%20fragrances." target="_blank" rel="noopener" aria-label="Chat with LAVISH on WhatsApp">✆</a>
-<script>
-const products=[["Oud Royal","Woody • Oriental • Leather"],["Vanilla Noir","Warm • Sweet • Seductive"],["Fleur Blanche","Floral • Elegant • Fresh"],["Marshmallow","Sweet • Creamy • Playful"],["Lucid","Fresh • Citrusy • Modern"],["Tobacco","Rich • Smoky • Sophisticated"],["Caramel","Sweet • Warm • Addictive"],["Cocodak","Coconut • Creamy • Tropical"],["Fire Night","Spicy • Intense • Nightwear"],["Elixir Vampire","Dark • Mysterious • Sensual"]];
-const root=document.getElementById("products");
-products.forEach(([name,notes])=>{const card=document.createElement("article");card.className="card";const msg=(size,price)=>"https://wa.me/918091597437?text="+encodeURIComponent("Hello LAVISH, I would like to order "+name+" - "+size+" for ₹"+price+". Please confirm my order.");card.innerHTML='<div class="product-visual" role="img" aria-label="'+name+' perfume bottle"><div class="mini-bottle"></div></div><div class="card-body"><h3>'+name+'</h3><div class="notes">'+notes+'</div><div class="pack-note">✦ PREMIUM LAVISH BOX INCLUDED</div><div class="price-line"><span class="price-pill">50 ml <strong>₹599</strong></span><span class="price-pill">100 ml <strong>₹1,200</strong></span></div><a class="buy" href="'+msg("50 ml",599)+'" target="_blank" rel="noopener">BUY NOW · 50 ML</a><a class="buy" href="'+msg("100 ml",1200)+'" target="_blank" rel="noopener">BUY NOW · 100 ML</a></div>';root.appendChild(card);});
-</script>
-</body></html>
+
+const products = [
+  ["Oud Royal", "Woody • Oriental • Leather"],
+  ["Vanilla Noir", "Warm • Sweet • Seductive"],
+  ["Fleur Blanche", "Floral • Elegant • Fresh"],
+  ["Marshmallow", "Sweet • Creamy • Playful"],
+  ["Lucid", "Fresh • Citrusy • Modern"],
+  ["Tobacco", "Rich • Smoky • Sophisticated"],
+  ["Caramel", "Sweet • Warm • Addictive"],
+  ["Cocodak", "Coconut • Creamy • Tropical"],
+  ["Fire Night", "Spicy • Intense • Nightwear"],
+  ["Elixir Vampire", "Dark • Mysterious • Sensual"]
+];
+
+const root = document.getElementById("products");
+
+products.forEach(([name, notes]) => {
+  const card = document.createElement("article");
+  card.className = "card";
+
+  card.innerHTML = `
+    <div class="product-visual">
+      <div class="mini-bottle"></div>
+    </div>
+    <div class="card-body">
+      <h3>${name}</h3>
+      <div class="notes">${notes}</div>
+      <div class="pack-note">✦ PREMIUM LAVISH BOX INCLUDED</div>
+      <div class="price-line">
+        <span class="price-pill">50 ml <strong>₹599</strong></span>
+        <span class="price-pill">100 ml <strong>₹1,200</strong></span>
+      </div>
+      <button class="buy" data-size="50 ml">BUY NOW · 50 ML</button>
+      <button class="buy" data-size="100 ml">BUY NOW · 100 ML</button>
+    </div>
+  `;
+
+  card.querySelectorAll(".buy").forEach(button => {
+    button.addEventListener("click", () => {
+      payNow(name, button.dataset.size);
+    });
+  });
+
+  root.appendChild(card);
+});
+
+async function payNow(product, size) {
+  try {
+    const response = await fetch("/api/create-order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ product, size })
+    });
+
+    const order = await response.json();
+
+    if (!response.ok) {
+      throw new Error(order.error || "Order creation failed");
+    }
+
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+
+    script.onload = () => {
+      const checkout = new Razorpay({
+        key: order.keyId,
+        amount: order.amount,
+        currency: order.currency,
+        name: "LAVISH PERFUMES",
+        description: product + " - " + size,
+        order_id: order.orderId,
+
+        handler: async function (payment) {
+          const verify = await fetch("/api/verify-payment", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payment)
+          });
+
+          const result = await verify.json();
+
+          if (verify.ok && result.verified) {
+            alert("Payment successful! Thank you for choosing LAVISH.");
+          } else {
+            alert("Payment verification failed. Please contact LAVISH.");
+          }
+        },
+
+        theme: { color: "#c39450" }
+      });
+
+      checkout.open();
+    };
+
+    script.onerror = () => alert("Payment window could not load.");
+    document.body.appendChild(script);
+
+  } catch (error) {
+    alert(error.message || "Unable to start payment. Please try again.");
+  }
+}
+
